@@ -22,7 +22,7 @@ const Main = ({ children, router }) => {
        
         
        
-        <title>Phát Say Game</title>
+        <title>Phát Mê Game</title>
       </Head>
 
       <NavBar path={router.asPath} />

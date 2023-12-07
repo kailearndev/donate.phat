@@ -28,6 +28,7 @@ import pld from '../public/images/pld.webp'
 import qr from '../public/images/qrdonate.jpeg'
 import vcb from '../public/images/vcb.png'
 import stk from '../public/images/passcode.png'
+import { motion } from 'framer-motion'
 
 
 const ProfileImage = chakra(Image, {
@@ -63,12 +64,12 @@ const Home = () => {
           Hello, mấy bạn trẻ =))
         </Box>
 
-        <Box display={{ md: 'flex' }}>
+        <Box display={{ md: 'flex' }} alignItems={'center'}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Phát Say Game
+              Phát Mê Game
             </Heading>
-            <p>Tôi là ( Photographer/Streamer /Xiaoliner )</p>
+            <p> ( Photographer/Streamer/Xiaoliner )</p>
           </Box>
           <Box
             flexShrink={0}
@@ -80,35 +81,37 @@ const Home = () => {
               borderColor="whiteAlpha.800"
               borderWidth={2}
               borderStyle="solid"
-              w="100px"
-              h="100px"
+              w="200"
+              h="200px"
               display="inline-block"
               borderRadius="full"
               overflow="hidden"
             >
-              <ProfileImage
-                src="/images/avt.jpeg"
-                alt="Profile image"
-                borderRadius="full"
-                width="100"
-                height="100"
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                translate={''}
+               
+              >
+                <ProfileImage
+                  src="/images/avt.jpg"
+                  alt="Profile image"
+                  // borderRadius="full"
+                  width="200"
+                  height="200"
+                />
+              </motion.div>
             </Box>
           </Box>
         </Box>
 
-        <Section delay={0.1} >
+        <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
             Kênh Donate
           </Heading>
-          {/* <Paragraph>
-          Chào bạn Phát Say Game đêyy
-          
-        </Paragraph> */}
 
-          <Box align="center" my={4}>
-           
-          </Box>
+          <Box align="center" my={4}></Box>
         </Section>
         <List p={'unset'} display={'flex'} flexDirection={'row'}>
           <ListItem>
@@ -119,7 +122,7 @@ const Home = () => {
                 colorScheme="green"
                 leftIcon={<Image width={20} height={20} src={vcb} alt="" />}
               >
-              QR VCB
+                QR VCB
               </Button>
             </Link>
           </ListItem>
@@ -135,16 +138,14 @@ const Home = () => {
             </Link>
           </ListItem>
           <ListItem>
-
-              <Button
-                onClick={handleCopy}
-                variant="ghost"
-                colorScheme="telegram"
-                leftIcon={<Image width={20} height={20} src={stk} alt="" />}
-              >
-               STK
-              </Button>
-           
+            <Button
+              onClick={handleCopy}
+              variant="ghost"
+              colorScheme="telegram"
+              leftIcon={<Image width={20} height={20} src={stk} alt="" />}
+            >
+              STK
+            </Button>
           </ListItem>
         </List>
 

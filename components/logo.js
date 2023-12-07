@@ -33,7 +33,7 @@ const Logo = () => {
           fontWeight="bold"
           ml={3}
         >
-         Phát Say Game
+         Phát Mê Game
         </Text>
       </LogoBox>
 
