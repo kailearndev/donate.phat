@@ -66,9 +66,9 @@ const Home = () => {
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Danny Phát
+              Phát Say Game
             </Heading>
-            <p>Tôi là ( Photographer/Streamer/Xiaoliner )</p>
+            <p>Tôi là ( Photographer/Streamer /Xiaoliner )</p>
           </Box>
           <Box
             flexShrink={0}
