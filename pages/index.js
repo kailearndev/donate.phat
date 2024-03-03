@@ -7,16 +7,11 @@ import {
   Link,
   List,
   ListItem,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalOverlay,
   chakra,
+  useClipboard,
   useColorModeValue,
-  useDisclosure,
-  useToast,
-  useClipboard
+  
+  useToast
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import NextLink from 'next/link'
@@ -25,10 +20,11 @@ import { PiDiscordLogoDuotone } from 'react-icons/pi'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import pld from '../public/images/pld.webp'
+import wescanqr from '../public/images/qrcodewescan.png'
 import qr from '../public/images/qrdonate.jpeg'
-import vcb from '../public/images/vcb.png'
-import stk from '../public/images/passcode.png'
+
 import { motion } from 'framer-motion'
+import stk from '../public/images/passcode.png'
 
 
 const ProfileImage = chakra(Image, {
@@ -36,7 +32,8 @@ const ProfileImage = chakra(Image, {
 })
 
 const Home = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+
+
   const toast = useToast()
 
   const { onCopy } = useClipboard('0791000060184')
@@ -50,6 +47,7 @@ const Home = () => {
       isClosable: true
     })
   }
+
   return (
     <Layout>
       <Container>
@@ -92,7 +90,6 @@ const Home = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 translate={''}
-               
               >
                 <ProfileImage
                   src="/images/avt.jpg"
@@ -113,22 +110,36 @@ const Home = () => {
 
           <Box align="center" my={4}></Box>
         </Section>
-        <List p={'unset'} display={'flex'} flexDirection={'row'}>
+        <List p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
           <ListItem>
-            <Link>
-              <Button
-                onClick={onOpen}
-                variant="ghost"
-                colorScheme="green"
-                leftIcon={<Image width={20} height={20} src={vcb} alt="" />}
-              >
-                QR VCB
-              </Button>
-            </Link>
+            <Image
+              alt=""
+              style={{
+                height: 220,
+                width: 220,
+
+                borderRadius: '9px'
+              }}
+              src={qr}
+            />
           </ListItem>
+          <ListItem>
+            <Image
+              alt=""
+              style={{
+                height: 220,
+                width: 220,
+                borderRadius: '9px'
+              }}
+              src={wescanqr}
+            />
+          </ListItem>
+        </List>
+        <List mt={2} p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
           <ListItem>
             <Link href="https://playerduo.net/phatsaygame" target="_blank">
               <Button
+              
                 variant="ghost"
                 colorScheme="purple"
                 leftIcon={<Image width={20} height={20} src={pld} alt="" />}
@@ -235,27 +246,11 @@ const Home = () => {
           </Box>
         </Section>
       </Container>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalCloseButton />
-          <ModalBody sx={{ display: 'flex', justifyContent: 'center', p: 20 }}>
-            <Image
-              width={400}
-              height={400}
-              alt=""
-              src={qr}
-              style={{
-                objectFit: 'cover',
-                borderRadius: 10
-              }}
-            />
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+    
     </Layout>
   )
 }
 
 export default Home
 export { getServerSideProps } from '../components/chakra'
+
