@@ -111,7 +111,7 @@ const Home = () => {
           <Box align="center" my={4}></Box>
         </Section>
         <List p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
-          <ListItem>
+          <ListItem textAlign={'center'}>
             <Image
               alt=""
               style={{
@@ -122,9 +122,14 @@ const Home = () => {
               }}
               src={qr}
             />
+             Mở VNPAY hoặc App ngân hàng
+             <br/> để quét QR
           </ListItem>
-          <ListItem>
-            <Image
+          <ListItem textAlign={'center'}>
+          <Link  href="https://wescan.vn/phatmegame/" target="_blank"> 
+         
+            <Image 
+            
               alt=""
               style={{
                 height: 220,
@@ -133,6 +138,8 @@ const Home = () => {
               }}
               src={wescanqr}
             />
+              Nhớ Login khi donate qua <br/>We Scan
+          </Link>
           </ListItem>
         </List>
         <List mt={2} p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
