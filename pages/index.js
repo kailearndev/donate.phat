@@ -138,7 +138,7 @@ const Home = () => {
           </ListItem>
         </List>
         <List mt={2} p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
-          <ListItem>
+          {/* <ListItem>
             <Link href="https://playerduo.net/phatsaygame" target="_blank">
               <Button
                 variant="ghost"
@@ -148,7 +148,7 @@ const Home = () => {
                 Playerduo
               </Button>
             </Link>
-          </ListItem>
+          </ListItem> */}
           <ListItem>
             <Button
               onClick={handleCopy}
@@ -156,7 +156,7 @@ const Home = () => {
               colorScheme="telegram"
               leftIcon={<Image width={20} height={20} src={stk} alt="" />}
             >
-              STK
+              Ấn vào đây để copy STK
             </Button>
           </ListItem>
         </List>
