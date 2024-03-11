@@ -18,7 +18,6 @@ import { FaYoutube } from 'react-icons/fa'
 import { PiDiscordLogoDuotone } from 'react-icons/pi'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import pld from '../public/images/pld.webp'
 import pldqr from '../public/images/qrcodepld.png'
 import qr from '../public/images/qrdonate.jpeg'
 
