@@ -10,7 +10,6 @@ import {
   chakra,
   useClipboard,
   useColorModeValue,
-  
   useToast
 } from '@chakra-ui/react'
 import Image from 'next/image'
@@ -20,20 +19,17 @@ import { PiDiscordLogoDuotone } from 'react-icons/pi'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import pld from '../public/images/pld.webp'
-import wescanqr from '../public/images/qrcodewescan.png'
+import pldqr from '../public/images/qrcodepld.png'
 import qr from '../public/images/qrdonate.jpeg'
 
 import { motion } from 'framer-motion'
 import stk from '../public/images/passcode.png'
-
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
 const Home = () => {
-
-
   const toast = useToast()
 
   const { onCopy } = useClipboard('0791000060184')
@@ -122,31 +118,29 @@ const Home = () => {
               }}
               src={qr}
             />
-             Mở VNPAY hoặc App ngân hàng
-             <br/> để quét QR
+            Mở VNPAY hoặc App ngân hàng
+            <br /> để quét QR
           </ListItem>
           <ListItem textAlign={'center'}>
-          <Link  href="https://wescan.vn/phatmegame/" target="_blank"> 
-         
-            <Image 
-            
-              alt=""
-              style={{
-                height: 220,
-                width: 220,
-                borderRadius: '9px'
-              }}
-              src={wescanqr}
-            />
-              Nhớ Login khi donate qua <br/>We Scan
-          </Link>
+            <Link href="https://playerduo.net/phatsaygame" target="_blank">
+              <Image
+                alt=""
+                style={{
+                  height: 220,
+                  width: 220,
+                  borderRadius: '9px'
+                }}
+                src={pldqr}
+              />
+              Quét QR code ở đây nè <br />
+              mấy ní 🫰
+            </Link>
           </ListItem>
         </List>
         <List mt={2} p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
           <ListItem>
             <Link href="https://playerduo.net/phatsaygame" target="_blank">
               <Button
-              
                 variant="ghost"
                 colorScheme="purple"
                 leftIcon={<Image width={20} height={20} src={pld} alt="" />}
@@ -166,47 +160,6 @@ const Home = () => {
             </Button>
           </ListItem>
         </List>
-
-        {/* <Section delay={0.2}>
-        <Heading as="h3" variant="section-title">
-          Bio
-        </Heading>
-        <BioSection>
-          <BioYear>1984</BioYear>
-          Born in Osaka (大阪), Japan.
-        </BioSection>
-        <BioSection>
-          <BioYear>2010</BioYear>
-          Completed the Master&apos;s Program in the Graduate School of
-          Information Science at Nara Institute of Science and Technology
-          (奈良先端科学技術大学院大学情報科学研究科修士課程)
-        </BioSection>
-        <BioSection>
-          <BioYear>2010</BioYear>
-          Worked at Yahoo! Japan (ヤフー株式会社入社)
-        </BioSection>
-        <BioSection>
-          <BioYear>2012 to present</BioYear>
-          Working as a freelancer
-        </BioSection>
-      </Section> */}
-
-        {/* <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          I ♥
-        </Heading>
-        <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
-        </Paragraph>
-      </Section> */}
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
@@ -253,11 +206,9 @@ const Home = () => {
           </Box>
         </Section>
       </Container>
-    
     </Layout>
   )
 }
 
 export default Home
 export { getServerSideProps } from '../components/chakra'
-
