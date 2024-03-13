@@ -107,6 +107,21 @@ const Home = () => {
         </Section>
         <List p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
           <ListItem textAlign={'center'}>
+            <Link href="https://playerduo.net/phatsaygame" target="_blank">
+              <Image
+                alt=""
+                style={{
+                  height: 220,
+                  width: 220,
+                  borderRadius: '9px'
+                }}
+                src={pldqr}
+              />
+              <p style={{ fontSize: '16px' }}>Playerduo</p>
+              nhấn ở đây nè mấy ní 🫰
+            </Link>
+          </ListItem>
+          <ListItem textAlign={'center'}>
             <Image
               alt=""
               style={{
@@ -119,21 +134,6 @@ const Home = () => {
             />
             Mở VNPAY hoặc App ngân hàng
             <br /> để quét QR
-          </ListItem>
-          <ListItem textAlign={'center'}>
-            <Link href="https://playerduo.net/phatsaygame" target="_blank">
-              <Image
-                alt=""
-                style={{
-                  height: 220,
-                  width: 220,
-                  borderRadius: '9px'
-                }}
-                src={pldqr}
-              />
-              Quét QR code ở đây nè <br />
-              mấy ní 🫰
-            </Link>
           </ListItem>
         </List>
         <List mt={2} p={'unset'} display={'flex'} flexDirection={'row'} gap={4}>
