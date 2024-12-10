@@ -30,7 +30,6 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => {
   const toast = useToast()
-
   const { onCopy } = useClipboard('0791000060184')
   const handleCopy = () => {
     onCopy
@@ -42,6 +41,7 @@ const Home = () => {
       isClosable: true
     })
   }
+
 
   return (
     <Layout>
@@ -56,8 +56,45 @@ const Home = () => {
         >
           Hello, mấy bạn trẻ =))
         </Box>
+        <Box
+
+          style={{
+            borderRadius: 10,
+
+
+            aspectRatio: "1/1"
+
+
+          }}
+        >
+
+
+          <video
+            preload="metadata"
+            controls
+            style={{
+              height: '100%',
+              width: '100%',
+              objectFit: "contain",
+
+            }}
+          >
+            <source
+              src={
+                "https://res.cloudinary.com/dbdvha6if/video/upload/v1733850210/xgeq0dr7aizklw2xsftt.mp4"
+              }
+              type="video/mp4"
+            />
+          </video>
+
+        </Box>
+
+
+        <Box align="center" my={4}></Box>
+
 
         <Box display={{ md: 'flex' }} alignItems={'center'}>
+
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
               Phát Mê Game
@@ -97,6 +134,7 @@ const Home = () => {
             </Box>
           </Box>
         </Box>
+
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
@@ -205,9 +243,10 @@ const Home = () => {
           </Box>
         </Section>
       </Container>
-    </Layout>
+    </Layout >
   )
 }
 
 export default Home
 export { getServerSideProps } from '../components/chakra'
+
