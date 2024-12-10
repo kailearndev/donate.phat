@@ -20,7 +20,10 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import pldqr from '../public/images/qrcodepld.png'
 import qr from '../public/images/qrdonate.jpeg'
+import {
+  Tag,
 
+} from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import stk from '../public/images/passcode.png'
 
@@ -56,11 +59,34 @@ const Home = () => {
         >
           Hello, mấy bạn trẻ =))
         </Box>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+
+        >
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+
+            css={{ backdropFilter: 'blur(10px)' }}
+          >
+            <Tag>
+              Ấn vào video bên dưới để donate qua Playerduo Nhé
+            </Tag>
+
+
+            👇
+
+
+          </Box>
+        </motion.div>
         <Box
 
           style={{
             borderRadius: 10,
-
 
             aspectRatio: "1/1"
 
@@ -76,6 +102,9 @@ const Home = () => {
               height: '100%',
               width: '100%',
               objectFit: "contain",
+              backgroundColor: "white",
+              boxShadow: 10,
+              borderRadius: 10
 
             }}
           >
