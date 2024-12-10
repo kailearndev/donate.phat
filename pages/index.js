@@ -96,6 +96,8 @@ const Home = () => {
 
 
           <video
+
+            poster='./thumb.png'
             preload="metadata"
             controls
             style={{
@@ -104,7 +106,8 @@ const Home = () => {
               objectFit: "contain",
               backgroundColor: "white",
               boxShadow: 10,
-              borderRadius: 10
+              borderRadius: 10,
+
 
             }}
           >
